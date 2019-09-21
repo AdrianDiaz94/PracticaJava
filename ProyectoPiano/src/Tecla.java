@@ -1,8 +1,8 @@
 
 public class Tecla {
-	String letra;
-	public Tecla(String letra) {
-		this.letra=letra;
+	String nota;
+	public Tecla(String nota) {
+		this.nota=nota;
 		
 	}
 	public int cantidadEntreTeclas(Tecla otra) {
@@ -12,16 +12,16 @@ public class Tecla {
 		String l,p,o;
 		for(int i=0; i<teclas.length;i++) {
 		
-			if(otra.letra.length()==3 && teclas[i].equals(otra.letra.substring(0,1)+"#")) {
+			if(otra.nota.length()==3 && teclas[i].equals(otra.nota.substring(0,1)+"#")) {
 				posicionTecla2=i;
 			}
-			else if(teclas[i].equals(otra.letra.substring(0,1))){
+			else if(teclas[i].equals(otra.nota.substring(0,1))){
 				posicionTecla2=i;
 			}
-			if(this.letra.length()==3 && teclas[i].equals(this.letra.substring(0,1)+"#")) {
+			if(this.nota.length()==3 && teclas[i].equals(this.nota.substring(0,1)+"#")) {
 				posicionTecla1=i;
 			}
-			else if(teclas[i].equals(this.letra.substring(0,1))){
+			else if(teclas[i].equals(this.nota.substring(0,1))){
 				posicionTecla1=i;
 			}
 		
@@ -31,9 +31,9 @@ public class Tecla {
 		
 		
 		int dif=0;
-		dif=Math.abs(posicionTecla2-posicionTecla1)+1;
-		String n1=this.letra.substring(1, 2);
-		String n2=otra.letra.substring(1,2);
+		dif=posicionTecla2-posicionTecla1+1;
+		String n1=this.nota.substring(1, 2);
+		String n2=otra.nota.substring(1,2);
 		int num1=Integer.parseInt(n1);
 		int num2=Integer.parseInt(n2);
 		return  dif+(num2-num1)*12;
@@ -45,15 +45,12 @@ public class Tecla {
 			return false;
 		return true;
 	}
-	public void setLetra(String letra) {
-		this.letra=letra;
+	public void setNota(String nota) {
+		this.nota=nota;
 	}
-	public String getLetra() {
-		return this.letra;
+	public String getNota() {
+		return this.nota;
 	}
-	@Override
-	public String toString() {
-		return  letra;
-	}
+	
 	
 }
