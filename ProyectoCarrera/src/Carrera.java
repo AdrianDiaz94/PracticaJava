@@ -6,7 +6,7 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Carrera {
-
+/*
 	public static void main(String[] args) throws FileNotFoundException {
 
 		Scanner sc=new Scanner(new File("carrera.in"));
@@ -26,31 +26,6 @@ public class Carrera {
 		salida.close();		
 		sc.close();
 	}
-	/*
-	public void contarCuadras(String fileIn, String fileOut) throws IOException
-	{
-		Scanner scIn = new Scanner(new File(fileIn));
-		Integer cantCuadrasTotales = scIn.nextInt();
-		Integer maxDifSocios = scIn.nextInt();
-		Integer maxCantNeutrales = scIn.nextInt();
-		Integer cantCuadrasBuenas = 0;
-		while (cantCuadrasTotales > 0)
-		{
-			cantCuadrasTotales--;
-			Integer cantSociosA = scIn.nextInt();
-			Integer cantSociosB = scIn.nextInt();
-			Integer cantHabitantes = scIn.nextInt();
-			if (Math.abs(cantSociosA - cantSociosB) <= maxDifSocios
-					&& cantHabitantes - cantSociosA - cantSociosB <= maxCantNeutrales)
-			{
-				cantCuadrasBuenas++;
-			}
 
-		}
-		scIn.close();
-		FileWriter writerOut = new FileWriter(new File(fileOut));
-		writerOut.append(cantCuadrasBuenas.toString());
-		writerOut.close();
-	}*/
-
+*/
 }

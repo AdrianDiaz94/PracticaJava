@@ -1,11 +1,11 @@
 3
 D1#
 A1#
-B1#
+B1
 //veo que pasa si Pos llega a t1
 t1 llego a t2
 pero pos no llega a T2
 
 Salida:
-D1#
-B1#
+D1
+A1
