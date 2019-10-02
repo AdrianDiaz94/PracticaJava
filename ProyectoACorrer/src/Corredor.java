@@ -2,6 +2,7 @@
 public class Corredor {
 	private int edad;
 	private String sexo;
+	private int categoria;
 	public Corredor() {
 		
 	}
@@ -17,7 +18,12 @@ public String getSexo() {
 }
 @Override
 public String toString() {
-	return this.edad+" "+this.sexo;
+	return this.edad+" "+this.sexo +" "+this.categoria;
 }
-
+public int getCategoria() {
+	return this.categoria;
+}
+public void setCategoria(int categoria) {
+	this.categoria=categoria;
+}
 }
