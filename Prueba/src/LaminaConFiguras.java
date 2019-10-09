@@ -22,8 +22,8 @@ public class LaminaConFiguras  extends JPanel{
 	JButton botonNegro= new JButton("pintar de Negro");
 	JButton botonAzul=new JButton("pintar de azul");
 	public LaminaConFiguras() {
-		add(botonNegro);
-		add(botonAzul);
+		//add(botonNegro);
+		//add(botonAzul);
 		ColorDeFondo negro=new ColorDeFondo(Color.black);
 		ColorDeFondo azul=new ColorDeFondo(Color.blue);
 		botonNegro.addActionListener(negro);
@@ -32,11 +32,67 @@ public class LaminaConFiguras  extends JPanel{
 		
 public void paintComponent(Graphics g) {
 	super.paintComponent(g);
-	//Graphics2D g2= (Graphics2D)g;
-	/*Rectangle2D rectangulo=new Rectangle2D.Double(120,50,200,150);
+	Graphics2D g2= (Graphics2D)g;
+	
+	double anchoAlturaCasilla=30;
+	double ubicacionX=50;
+	double ubicacionY=50;
+	
+	Rectangle2D rectangulo=new Rectangle2D.Double(120,100,anchoAlturaCasilla,anchoAlturaCasilla);
+	
+	for(int i=0;i<8;i++) {
+	
+	rectangulo.setFrame(ubicacionX,ubicacionY+(i*anchoAlturaCasilla), anchoAlturaCasilla, anchoAlturaCasilla);
 	g2.setPaint(Color.BLUE);
+	g2.fill(rectangulo);
+	g2.setPaint(Color.BLACK);
 	g2.draw(rectangulo);
-	Ellipse2D elipse=new Ellipse2D.Double();
+	
+	}
+	for(int i=0;i<11;i++){
+		rectangulo.setFrame(ubicacionX+(i*anchoAlturaCasilla),ubicacionY, anchoAlturaCasilla, anchoAlturaCasilla);
+		g2.setPaint(Color.BLUE);
+		g2.fill(rectangulo);
+		g2.setPaint(Color.BLACK);
+		g2.draw(rectangulo);
+	}
+	
+	for(int i=0;i<12;i++) {
+		rectangulo.setFrame(ubicacionX+(i*anchoAlturaCasilla),ubicacionY+7*anchoAlturaCasilla, anchoAlturaCasilla, anchoAlturaCasilla);
+		g2.setPaint(Color.BLUE);
+		g2.fill(rectangulo);
+		g2.setPaint(Color.BLACK);
+		g2.draw(rectangulo);
+		
+	}
+	for(int i=0;i<8;i++) {
+		rectangulo.setFrame(ubicacionX+anchoAlturaCasilla*5,ubicacionY+(i*anchoAlturaCasilla), anchoAlturaCasilla, anchoAlturaCasilla);
+		g2.setPaint(Color.BLUE);
+		g2.fill(rectangulo);
+		g2.setPaint(Color.BLACK);
+		g2.draw(rectangulo);
+		
+		
+	}
+	for(int i=0;i<3;i++) {
+		rectangulo.setFrame(ubicacionX+anchoAlturaCasilla*i,ubicacionY+anchoAlturaCasilla*5, anchoAlturaCasilla, anchoAlturaCasilla);
+		g2.setPaint(Color.BLUE);
+		g2.fill(rectangulo);
+		g2.setPaint(Color.BLACK);
+		g2.draw(rectangulo);
+		
+		
+	}
+	for(int i=0;i<3;i++) {
+		rectangulo.setFrame(ubicacionX+anchoAlturaCasilla*2,ubicacionY+((i+3)*anchoAlturaCasilla), anchoAlturaCasilla, anchoAlturaCasilla);
+		g2.setPaint(Color.BLUE);
+		g2.fill(rectangulo);
+		g2.setPaint(Color.BLACK);
+		g2.draw(rectangulo);
+		
+		
+	}
+	/*Ellipse2D elipse=new Ellipse2D.Double();
 	elipse.setFrame(rectangulo);
 	//g2.draw(rectangulo);
 	g2.setPaint(Color.RED);
