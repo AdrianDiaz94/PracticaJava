@@ -46,7 +46,7 @@ public abstract class Tablero {
 				this.ventanaTablero.miLamina.movimientoJugador(jugador,"abajo");
 			}
 			
-			Thread.sleep(1000);
+			
 			cantidad--;
 		}
 		if (cantidad == 0)

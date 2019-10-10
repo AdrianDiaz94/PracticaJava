@@ -7,13 +7,13 @@ public class Maint {
 		// TODO Apéndice de método generado automáticamente
 		Jugador jugador1 = new Jugador("pepe","pepe");
 		jugador1.setLugarTableroX(0);
-		jugador1.setLugarTableroY(0);
+		jugador1.setLugarTableroY(1);
 		jugador1.setPosicionAnteriorX(0);
 		jugador1.setPosicionAnteriorY(0);
 		Jugador jugador2 = new Jugador("pepe","pepe");
 		jugador2.setLugarTableroX(3);
 		jugador2.setLugarTableroY(0);
-		jugador2.setPosicionAnteriorX(0);
+		jugador2.setPosicionAnteriorX(2);
 		jugador2.setPosicionAnteriorY(0);
 		Jugador jugador3 = new Jugador("pepe","pepe");
 		jugador3.setLugarTableroX(5);
@@ -23,8 +23,8 @@ public class Maint {
 		Jugador jugador4 = new Jugador("pepe","pepe");
 		jugador4.setLugarTableroX(7);
 		jugador4.setLugarTableroY(10);
-		jugador4.setPosicionAnteriorX(0);
-		jugador4.setPosicionAnteriorY(0);
+		jugador4.setPosicionAnteriorX(7);
+		jugador4.setPosicionAnteriorY(9);
 
 		List<Jugador> jugadores= new LinkedList<Jugador>();
 		jugadores.add(jugador1);
@@ -33,8 +33,14 @@ public class Maint {
 		jugadores.add(jugador4);
 		
 		Tablero tablero = new TableroNormal(jugadores);
-		Thread.sleep(10000);
-		tablero.avanzarJugador(jugador3, 3);
+		Thread.sleep(2000);
+		tablero.avanzarJugador(jugador3, 10);
+		Thread.sleep(2000);
+		tablero.avanzarJugador(jugador1, 10);
+		Thread.sleep(2000);
+		tablero.avanzarJugador(jugador2, 10);
+		Thread.sleep(2000);
+		tablero.avanzarJugador(jugador4, 10);
 	}
 	
 
