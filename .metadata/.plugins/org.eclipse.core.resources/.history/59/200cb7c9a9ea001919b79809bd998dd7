@@ -1,0 +1,12 @@
+import java.util.LinkedList;
+import java.util.List;
+
+public class Maint {
+
+	public static void main(String[] args) {
+		// TODO Apéndice de método generado automáticamente
+		List<Jugador> jugadores= new LinkedList<Jugador>();
+		Tablero tablero = new TableroNormal(jugadores);
+	}
+
+}

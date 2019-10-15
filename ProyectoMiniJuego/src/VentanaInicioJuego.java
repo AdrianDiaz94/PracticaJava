@@ -10,12 +10,17 @@ import javax.swing.JTextField;
 
 public class VentanaInicioJuego extends JFrame {
 	PanelVentanaMiniJuego panelInicio;
+	PanelDado panelDado;
 	public VentanaInicioJuego(String titulo,int x , int y,Minijuego mini) {
 		setLocation(x, y);
 		setSize(950,400);
 		setTitle(titulo);
 		this.panelInicio=new PanelVentanaMiniJuego(mini);
-		add(panelInicio);
+		this.panelDado=new PanelDado();
+		
+		//add(panelInicio);
+		add(panelDado);
+
 		
 		//visibilizarModalidad();
 		

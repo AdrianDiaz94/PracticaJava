@@ -1,0 +1,77 @@
+
+public class Tecla {
+	String nota;
+	public Tecla(String nota) {
+		this.nota=nota;
+		
+	}
+	public int cantidadEntreTeclas(Tecla otra) {
+		String []teclas = {"C","C#","D","D#","E","F","F#","G","G#","A","A#","B"};
+		int posicionTecla1=-1;
+		int posicionTecla2=-1;
+		String l,p,o;
+		for(int i=0; i<teclas.length;i++) {
+		
+			if(otra.nota.length()==3 && teclas[i].equals(otra.nota.substring(0,1)+"#")) {
+				posicionTecla2=i;
+			}
+			else if(teclas[i].equals(otra.nota.substring(0,1))){
+				posicionTecla2=i;
+			}
+			if(this.nota.length()==3 && teclas[i].equals(this.nota.substring(0,1)+"#")) {
+				posicionTecla1=i;
+			}
+			else if(teclas[i].equals(this.nota.substring(0,1))){
+				posicionTecla1=i;
+			}
+		
+			
+			
+		}
+		
+		
+		int dif=0;
+		dif=posicionTecla2-posicionTecla1+1;
+		String n1=this.nota.substring(1, 2);
+		String n2=otra.nota.substring(1,2);
+		int num1=Integer.parseInt(n1);
+		int num2=Integer.parseInt(n2);
+		return  dif+(num2-num1)*12;
+		
+	}
+	public boolean puedeTocar (Tecla otra) {
+		int cantidad=this.cantidadEntreTeclas(otra);
+		if(cantidad<1 || cantidad >8)
+			return false;
+		return true;
+	}
+	public void setNota(String nota) {
+		this.nota=nota;
+	}
+	public String getNota() {
+		return this.nota;
+	}
+	
+	public static void diferenciaEntreTeclas(Tecla l1 , Tecla l2 ) {
+		String letra1=l1.nota.substring(0,1);
+		String letra2=l2.nota.substring(0,1);
+		String []letras= {"C","D","E","F","G","A","B","C","D","E","F","G","A"};
+		int i=0;
+		int posLetra1=-1;
+		int posLetra2=-1;
+		while(i<letras.length) {
+			if(letra1.equals(letras[i])) {
+				posLetra1=i;
+			}			
+			i++;
+		}
+		while(i<letras.length) {
+			if(letra2.equals(letras[i])) {
+				posLetra2=i;
+			}			
+			i++;
+		}
+	int dif=(posLetra2-posLetra1);
+	System.out.println(dif);
+	}
+}

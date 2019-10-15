@@ -1,0 +1,10 @@
+
+public class Maint {
+
+	public static void main(String[] args) {
+		// TODO Apéndice de método generado automáticamente
+
+		VentanaTablero ventana=new VentanaTablero("asda", 20, 20);
+	}
+
+}

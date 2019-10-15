@@ -1,0 +1,158 @@
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+
+
+
+public class PanelVentanaMiniJuego extends JPanel {
+	private	JButton botonAceptarModalidad=new JButton("aceptar");
+		private JButton boton1=new JButton("1");
+	private	JButton boton2=new JButton("2");
+		private JButton boton3=new JButton("3");
+		private	JButton boton4=new JButton("4");
+		private JButton boton5=new JButton("5");
+		private	JButton boton6=new JButton("6");
+		private JLabel texto1=new JLabel("En este minijuego se va a sortear un numero del 1 al 6.");
+		private JLabel texto2=new JLabel("Cada jugador debe ingresar un número:\n");
+		private JLabel texto3=new JLabel("-los jugadores que acierten van a recirbir puntos, los que no aciertan van a perder puntos.\n");
+		private JLabel texto4=new JLabel("-si nadie acierta, no reciben castigo.\n");
+		private JLabel texto5=new JLabel("-El jugador que no ingrese un número va a ser castigado con la quita de puntos");
+		private JButton botonAceptarResultados=new JButton("Aceptar");
+		private JLabel textoResultado=new JLabel("Resultados:");
+		
+		private 	Minijuego mini;
+		
+	
+		public  PanelVentanaMiniJuego(Minijuego mini) {
+			this.mini=mini;
+			add(boton1);
+			add(boton2);
+			add(boton3);
+			add(boton4);
+			add(boton5);
+			add(boton6);
+			
+			
+			botonAceptarModalidad.setLocation(0, 10000);
+			add(botonAceptarModalidad);
+			
+			add(botonAceptarResultados);
+			add(texto1);
+			add(texto2);
+			add(texto3);
+			add(texto4);
+			add(texto5);
+			add(textoResultado);
+			visibilizarModalidad();
+			Botones botonesListener=new Botones();
+			botonAceptarModalidad.addActionListener(botonesListener);
+			boton1.addActionListener(botonesListener);
+			boton2.addActionListener(botonesListener);
+			boton3.addActionListener(botonesListener);
+			boton4.addActionListener(botonesListener);
+			boton5.addActionListener(botonesListener);
+			boton6.addActionListener(botonesListener);
+			botonAceptarResultados.addActionListener(botonesListener);
+		}
+		public void paintComponent(Graphics g) {
+			super.paintComponent(g);
+			botonAceptarModalidad(100,100);
+			texto1.setLocation(100, 50);
+			texto2.setLocation(100, 60);
+			texto3.setLocation(100, 70);
+			texto4.setLocation(100, 80);
+			texto5.setLocation(100, 90);
+		}
+		class Botones implements ActionListener{
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				if(e.getSource()==botonAceptarModalidad) {
+					visibilizarMiniJuego();
+					
+				}
+				if(e.getSource()==boton1) {
+					mini.agregarNumero(1);
+					
+				}
+				 if(e.getSource()==boton2) {
+					mini.agregarNumero(2);
+				
+				}
+				if(e.getSource()==boton3) {
+					mini.agregarNumero(3);
+					
+				}
+				if(e.getSource()==boton4) {
+					mini.agregarNumero(4);
+					
+				}
+			if(e.getSource()==boton5) {
+					mini.agregarNumero(5);
+					
+				}
+				if(e.getSource()==boton6) {
+					mini.agregarNumero(6);
+					
+				}
+				if(e.getSource()==botonAceptarResultados) {
+					System.exit(0);
+				}
+				
+			}
+			
+		}
+		private void visibilizarModalidad() {
+			System.out.println("mostrando modalidad");
+			texto1.setVisible(true);
+			texto2.setVisible(true);
+			texto3.setVisible(true);
+			texto4.setVisible(true);
+			texto5.setVisible(true);
+			boton1.setVisible(false);
+			boton2.setVisible(false);
+			boton3.setVisible(false);
+			boton4.setVisible(false);
+			boton5.setVisible(false);
+			boton6.setVisible(false);
+			botonAceptarResultados.setVisible(false);
+			textoResultado.setVisible(false);
+			
+		}
+		private void visibilizarMiniJuego() {
+			System.out.println("mostrando minijuego");
+			botonAceptarModalidad.setVisible(false);
+			boton1.setVisible(true);
+			boton2.setVisible(true);
+			boton3.setVisible(true);
+			boton4.setVisible(true);
+			boton5.setVisible(true);
+			boton6.setVisible(true);
+			botonAceptarResultados.setVisible(false);
+			texto1.setVisible(false);
+			texto2.setVisible(false);
+			texto3.setVisible(false);
+			texto4.setVisible(false);
+			texto5.setVisible(false);
+		}
+		public void mostrarNumeroSorteado(int numeroSorteado) {
+			System.out.println("mostrando resultados, el numero sorteado fue el :" +numeroSorteado);
+			boton1.setVisible(false);
+			boton2.setVisible(false);
+			boton3.setVisible(false);
+			boton4.setVisible(false);
+			boton5.setVisible(false);
+			boton6.setVisible(false);
+			botonAceptarModalidad.setVisible(false);
+			botonAceptarResultados.setVisible(true);
+			textoResultado.setVisible(true);
+		}
+		
+	}

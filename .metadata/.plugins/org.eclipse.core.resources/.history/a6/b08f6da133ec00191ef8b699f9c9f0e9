@@ -1,0 +1,10 @@
+
+public class MainTest {
+
+	public static void main(String[] args) {
+	int vec[]= {5,8,1,6,10,11,3,2};
+	int vec2[]=Insercion.ordenar(vec);
+
+	}
+
+}

@@ -1,0 +1,10 @@
+import javax.swing.JFrame;
+
+public class MainTest {
+	public static void main(String[] args) {
+		VentanaInicioJuego ventana= new VentanaInicioJuego("inicio", 100,100);
+		ventana.setVisible(true);
+		ventana.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	}
+
+}

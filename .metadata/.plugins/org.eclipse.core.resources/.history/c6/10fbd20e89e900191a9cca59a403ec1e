@@ -1,0 +1,17 @@
+import java.util.LinkedList;
+import java.util.List;
+
+import javax.swing.JFrame;
+
+public class MainTest {
+	public static void main(String[] args) {
+	Jugador jugador1=new Jugador("pepe1", "asda1");
+	Jugador jugador2=new Jugador("pepe2", "asda2");
+	Jugador jugador3=new Jugador("pepe3", "asda3");
+	Jugador jugador4=new Jugador("pepe4", "asda4");
+	List <Jugador>jugadores= new LinkedList<Jugador>();
+	Minijuego mini= new Minijuego(jugadores);
+	
+	}
+
+}

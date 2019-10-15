@@ -2,9 +2,12 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.geom.Rectangle2D;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
@@ -40,6 +43,7 @@ public class PanelVentanaMiniJuego extends JPanel {
 		private JLabel jugador4=new JLabel("");
 		private JLabel turnoJugador=new JLabel("");
 		private JLabel turnoDe=new JLabel("Turno de:");
+	
 		
 		private 	Minijuego mini;
 		
@@ -104,6 +108,7 @@ public class PanelVentanaMiniJuego extends JPanel {
 		    }
 		    */
 			//setBackground(new Color(20, 72, 112));
+			
 		    texto1.setFont(new Font("Courier",Font.BOLD,17));
 			texto2.setFont(new Font("Courier",Font.BOLD,17));
 			texto3.setFont(new Font("Courier",Font.BOLD,17));
@@ -148,6 +153,8 @@ public class PanelVentanaMiniJuego extends JPanel {
 			jugador4.setLocation(200,250);
 			botonAceptarResultados.setLocation(500, 175);
 			botonAceptarResultados.setSize(100, 50);
+			
+		
 			
 		}
 		class Botones implements ActionListener{
@@ -274,5 +281,6 @@ public class PanelVentanaMiniJuego extends JPanel {
 			turnoJugador.setText(nombre);
 			
 		}
+		
 		
 	}

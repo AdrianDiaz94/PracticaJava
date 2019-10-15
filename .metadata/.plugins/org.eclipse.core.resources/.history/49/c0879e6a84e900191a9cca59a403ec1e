@@ -1,0 +1,69 @@
+import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JPanel;
+
+
+
+public class PanelVentanaMiniJuego extends JPanel {
+		JButton botonAceptarModalidad=new JButton("aceptar");
+		JButton boton1=new JButton("1");
+		JButton boton2=new JButton("2");
+		JButton boton3=new JButton("3");
+		JButton boton4=new JButton("4");
+		JButton boton5=new JButton("5");
+		JButton boton6=new JButton("6");
+		JButton botonAceptarResultados=new JButton("Aceptar");
+		
+		
+		public PanelInicio() {
+			add(boton1);
+			add(boton2);
+			add(boton3);
+			add(boton4);
+			add(boton5);
+			add(boton6);
+			add(botonAceptarModalidad);
+			add(botonAceptarResultados);
+			visibilizarModalidad();
+			botonAceptarModalidad.addActionListener(new Botones());
+		}
+		public void paintComponent(Graphics g) {
+			super.paintComponent(g);
+		}
+		class Botones implements ActionListener{
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				if(e.getSource()==botonAceptarModalidad) {
+					boton1.setVisible(true);
+					boton2.setVisible(true);
+					boton3.setVisible(true);
+					boton4.setVisible(true);
+					boton5.setVisible(true);
+					boton6.setVisible(true);
+					botonAceptarResultados.setVisible(true);
+					botonAceptarModalidad.setVisible(false);
+				}
+				
+			}
+			
+		}
+		private void visibilizarModalidad() {
+			System.out.println("mostrando modalidad");
+			//botonAceptarModalidad.setVisible(true);
+			boton1.setVisible(false);
+			boton2.setVisible(false);
+			boton3.setVisible(false);
+			boton4.setVisible(false);
+			boton5.setVisible(false);
+			boton6.setVisible(false);
+			botonAceptarResultados.setVisible(false);
+			
+		}
+		
+		
+	}

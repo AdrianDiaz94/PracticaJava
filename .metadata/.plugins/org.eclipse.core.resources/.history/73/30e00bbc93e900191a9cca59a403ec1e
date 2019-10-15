@@ -1,0 +1,187 @@
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+
+
+
+public class PanelVentanaMiniJuego extends JPanel {
+	private	JButton botonAceptarModalidad=new JButton("aceptar");
+		private JButton boton1=new JButton("1");
+	private	JButton boton2=new JButton("2");
+		private JButton boton3=new JButton("3");
+		private	JButton boton4=new JButton("4");
+		private JButton boton5=new JButton("5");
+		private	JButton boton6=new JButton("6");
+		private JLabel texto1=new JLabel("En este minijuego se va a sortear un numero del 1 al 6.");
+		private JLabel texto2=new JLabel("Cada jugador debe ingresar un número:\n");
+		private JLabel texto3=new JLabel("-los jugadores que acierten van a recirbir puntos, los que "
+				+ "no aciertan van a perder puntos.\n");
+		private JLabel texto4=new JLabel("-si nadie acierta, no reciben castigo.\n");
+		private JLabel texto5=new JLabel("-El jugador que no ingrese un número va a ser castigado con la quita de puntos");
+		private JButton botonAceptarResultados=new JButton("Aceptar");
+		private JLabel textoResultado=new JLabel("Resultados:");
+		private JLabel elijaNum= new JLabel("Elija un número: ");
+		
+		private 	Minijuego mini;
+		
+	
+		public  PanelVentanaMiniJuego(Minijuego mini) {
+			this.mini=mini;
+			add(boton1);
+			add(boton2);
+			add(boton3);
+			add(boton4);
+			add(boton5);
+			add(boton6);
+			
+			
+			botonAceptarModalidad.setLocation(0, 10000);
+			add(botonAceptarModalidad);
+			
+			add(botonAceptarResultados);
+			add(texto1);
+			add(texto2);
+			add(texto3);
+			add(texto4);
+			add(texto5);
+			add(textoResultado);
+			add(elijaNum);
+			visibilizarModalidad();
+			Botones botonesListener=new Botones();
+			botonAceptarModalidad.addActionListener(botonesListener);
+			boton1.addActionListener(botonesListener);
+			boton2.addActionListener(botonesListener);
+			boton3.addActionListener(botonesListener);
+			boton4.addActionListener(botonesListener);
+			boton5.addActionListener(botonesListener);
+			boton6.addActionListener(botonesListener);
+			botonAceptarResultados.addActionListener(botonesListener);
+		}
+		public void paintComponent(Graphics g) {
+			super.paintComponent(g);
+			texto1.setFont(new Font("Courier",Font.BOLD,15));
+			texto2.setFont(new Font("Courier",Font.BOLD,15));
+			texto3.setFont(new Font("Courier",Font.BOLD,15));
+			texto4.setFont(new Font("Courier",Font.BOLD,15));
+			texto5.setFont(new Font("Courier",Font.BOLD,15));
+			elijaNum.setFont(new Font("Courier",Font.BOLD,25));
+			
+			texto1.setLocation(30, 50);
+			texto2.setLocation(30, 70);
+			texto3.setLocation(30, 90);
+			texto4.setLocation(30, 110);
+			texto5.setLocation(30, 130);
+			elijaNum.setLocation(30, 30);
+			
+			botonAceptarModalidad.setLocation(300,300);
+			boton1.setLocation(50,100);
+			boton2.setLocation(150,100);
+			boton3.setLocation(250,100);
+			boton4.setLocation(50,200);
+			boton5.setLocation(150,200);
+			boton6.setLocation(250,200);
+			
+			boton1.setSize(50, 50);
+			boton2.setSize(50, 50);
+			boton3.setSize(50, 50);
+			boton4.setSize(50, 50);
+			boton5.setSize(50, 50);
+			boton6.setSize(50, 50);
+		}
+		class Botones implements ActionListener{
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				if(e.getSource()==botonAceptarModalidad) {
+					visibilizarMiniJuego();
+					
+				}
+				if(e.getSource()==boton1) {
+					mini.agregarNumero(1);
+					
+				}
+				 if(e.getSource()==boton2) {
+					mini.agregarNumero(2);
+				
+				}
+				if(e.getSource()==boton3) {
+					mini.agregarNumero(3);
+					
+				}
+				if(e.getSource()==boton4) {
+					mini.agregarNumero(4);
+					
+				}
+			if(e.getSource()==boton5) {
+					mini.agregarNumero(5);
+					
+				}
+				if(e.getSource()==boton6) {
+					mini.agregarNumero(6);
+					
+				}
+				if(e.getSource()==botonAceptarResultados) {
+					System.exit(0);
+				}
+				
+			}
+			
+		}
+		private void visibilizarModalidad() {
+			System.out.println("mostrando modalidad");
+			texto1.setVisible(true);
+			texto2.setVisible(true);
+			texto3.setVisible(true);
+			texto4.setVisible(true);
+			texto5.setVisible(true);
+			boton1.setVisible(false);
+			boton2.setVisible(false);
+			boton3.setVisible(false);
+			boton4.setVisible(false);
+			boton5.setVisible(false);
+			boton6.setVisible(false);
+			botonAceptarResultados.setVisible(false);
+			textoResultado.setVisible(false);
+			elijaNum.setVisible(false);
+			
+		}
+		private void visibilizarMiniJuego() {
+			System.out.println("mostrando minijuego");
+			botonAceptarModalidad.setVisible(false);
+			boton1.setVisible(true);
+			boton2.setVisible(true);
+			boton3.setVisible(true);
+			boton4.setVisible(true);
+			boton5.setVisible(true);
+			boton6.setVisible(true);
+			botonAceptarResultados.setVisible(false);
+			texto1.setVisible(false);
+			texto2.setVisible(false);
+			texto3.setVisible(false);
+			texto4.setVisible(false);
+			texto5.setVisible(false);
+			elijaNum.setVisible(true);
+		}
+		public void mostrarNumeroSorteado(int numeroSorteado) {
+			System.out.println("mostrando resultados, el numero sorteado fue el :" +numeroSorteado);
+			boton1.setVisible(false);
+			boton2.setVisible(false);
+			boton3.setVisible(false);
+			boton4.setVisible(false);
+			boton5.setVisible(false);
+			boton6.setVisible(false);
+			botonAceptarModalidad.setVisible(false);
+			botonAceptarResultados.setVisible(true);
+			textoResultado.setVisible(true);
+			
+		}
+		
+	}

@@ -1,0 +1,35 @@
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Rectangle;
+import java.awt.geom.Rectangle2D;
+
+import javax.swing.JPanel;
+
+
+
+public class PanelDado extends JPanel implements Runnable{
+	private Rectangle2D rectangulo;
+	private Graphics2D g2;
+	double rot=100;
+public void paintComponent(Graphics g) {	
+	rectangulo= new Rectangle(100, 100, 100, 100);
+	g2=(Graphics2D)g;
+	g2.draw(rectangulo);
+	
+}
+	@Override
+	public void run() {
+		// TODO Apéndice de método generado automáticamente
+		for(double j=0;j<rot;j++) {
+		g2.rotate(j, 100, 100);
+		try {
+			Thread.sleep(100);
+		} catch (InterruptedException e) {
+			// TODO Bloque catch generado automáticamente
+			e.printStackTrace();
+		}
+		}
+	}
+	
+
+}

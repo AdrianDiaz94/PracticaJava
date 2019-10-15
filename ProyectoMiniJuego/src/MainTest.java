@@ -15,6 +15,7 @@ public class MainTest {
 	jugadores.add(jugador3);
 	jugadores.add(jugador4);
 	Minijuego mini= new Minijuego(jugadores);
+	mini.ventana.panelDado.run();
 	
 	}
 

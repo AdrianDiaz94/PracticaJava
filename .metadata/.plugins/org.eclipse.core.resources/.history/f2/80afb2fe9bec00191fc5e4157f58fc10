@@ -1,0 +1,4 @@
+
+public class PanelDado extends JPanel implements Runnable{
+
+}

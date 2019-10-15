@@ -1,0 +1,28 @@
+import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+
+public class VentanaInicioJuego extends JFrame {
+
+	
+	public VentanaInicioJuego(String titulo,int x , int y,Minijuego mini) {
+		setLocation(x, y);
+		setSize(200,200);
+		setTitle(titulo);
+		PanelVentanaMiniJuego panelInicio=new PanelVentanaMiniJuego(mini);
+		add(panelInicio);
+		
+		//visibilizarModalidad();
+		
+	
+	}
+	
+
+	
+}

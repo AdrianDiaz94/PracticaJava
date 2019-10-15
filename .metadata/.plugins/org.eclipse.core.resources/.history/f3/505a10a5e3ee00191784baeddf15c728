@@ -1,0 +1,17 @@
+
+public class ClaseA {
+	public ClaseA() {
+		System.out.println("A");
+	}
+}
+class ClaseB extends ClaseA{
+	
+	public ClaseB(int x) {
+		System.out.println("B");
+	}
+	public ClaseB() {
+		this(123);
+		System.out.println("C");
+	}
+	
+}

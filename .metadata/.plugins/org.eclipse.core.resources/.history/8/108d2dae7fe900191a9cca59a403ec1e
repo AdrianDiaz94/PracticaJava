@@ -1,0 +1,46 @@
+import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+
+public class VentanaInicioJuego extends JFrame implements ActionListener {
+
+	JButton botonAceptar=new JButton("aceptar");
+	JTextField texto= new JTextField("string");
+	public VentanaInicioJuego(String titulo,int x , int y) {
+		setLocation(x, y);
+		setSize(200,200);
+		setTitle(titulo);
+		PanelInicio panelInicio=new PanelInicio();
+		add(panelInicio);
+		add(botonAceptar);
+		add(texto);
+		botonAceptar.addActionListener(this);
+	//	panelInicio.add(texto);
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource()==botonAceptar);
+			this.setVisible(false);
+			VentanaMiniJuego ventana2=new VentanaMiniJuego("minijuego", 100, 400);
+			ventana2.setVisible(true);
+		
+	}
+	class PanelInicio extends JPanel {
+		
+		public PanelInicio() {
+			
+		}
+		public void paintComponent(Graphics g) {
+			super.paintComponent(g);
+		}
+		
+	}
+	
+	
+}
