@@ -1,6 +1,0 @@
-
-public class Insercion {
-public void ordenar(int vec[]) {
-	
-}
-}

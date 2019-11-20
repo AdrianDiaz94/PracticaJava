@@ -39,59 +39,14 @@ public void paintComponent(Graphics g) {
 	double ubicacionY=50;
 	
 	Rectangle2D rectangulo=new Rectangle2D.Double(120,100,anchoAlturaCasilla,anchoAlturaCasilla);
+
 	
-	for(int i=0;i<8;i++) {
-	
-	rectangulo.setFrame(ubicacionX,ubicacionY+(i*anchoAlturaCasilla), anchoAlturaCasilla, anchoAlturaCasilla);
-	g2.setPaint(Color.BLUE);
-	g2.fill(rectangulo);
-	g2.setPaint(Color.BLACK);
-	g2.draw(rectangulo);
-	
-	}
-	for(int i=0;i<11;i++){
-		rectangulo.setFrame(ubicacionX+(i*anchoAlturaCasilla),ubicacionY, anchoAlturaCasilla, anchoAlturaCasilla);
-		g2.setPaint(Color.BLUE);
-		g2.fill(rectangulo);
-		g2.setPaint(Color.BLACK);
-		g2.draw(rectangulo);
+	for(int i=0;i<10;i++) {
+	g2.setColor(Color.GREEN);
+	g2.fill3DRect(100+i*100, 100, 100, 100, true);
+	g2.draw3DRect(100+i*100, 100, 100, 100,true);
 	}
 	
-	for(int i=0;i<12;i++) {
-		rectangulo.setFrame(ubicacionX+(i*anchoAlturaCasilla),ubicacionY+7*anchoAlturaCasilla, anchoAlturaCasilla, anchoAlturaCasilla);
-		g2.setPaint(Color.BLUE);
-		g2.fill(rectangulo);
-		g2.setPaint(Color.BLACK);
-		g2.draw(rectangulo);
-		
-	}
-	for(int i=0;i<8;i++) {
-		rectangulo.setFrame(ubicacionX+anchoAlturaCasilla*5,ubicacionY+(i*anchoAlturaCasilla), anchoAlturaCasilla, anchoAlturaCasilla);
-		g2.setPaint(Color.BLUE);
-		g2.fill(rectangulo);
-		g2.setPaint(Color.BLACK);
-		g2.draw(rectangulo);
-		
-		
-	}
-	for(int i=0;i<3;i++) {
-		rectangulo.setFrame(ubicacionX+anchoAlturaCasilla*i,ubicacionY+anchoAlturaCasilla*5, anchoAlturaCasilla, anchoAlturaCasilla);
-		g2.setPaint(Color.BLUE);
-		g2.fill(rectangulo);
-		g2.setPaint(Color.BLACK);
-		g2.draw(rectangulo);
-		
-		
-	}
-	for(int i=0;i<3;i++) {
-		rectangulo.setFrame(ubicacionX+anchoAlturaCasilla*2,ubicacionY+((i+3)*anchoAlturaCasilla), anchoAlturaCasilla, anchoAlturaCasilla);
-		g2.setPaint(Color.BLUE);
-		g2.fill(rectangulo);
-		g2.setPaint(Color.BLACK);
-		g2.draw(rectangulo);
-		
-		
-	}
 	/*Ellipse2D elipse=new Ellipse2D.Double();
 	elipse.setFrame(rectangulo);
 	//g2.draw(rectangulo);
@@ -143,7 +98,14 @@ private class ColorDeFondo implements ActionListener{
 	
 		
 	}
-	
+	/*Image asd=null;
+	try {
+		asd = ImageIO.read(new File("./fondos/fondoJuego.jpg"));
+	} catch (IOException e) {
+		System.out.println("no se encuentra la imagen Tablero");
+
+	}
+	*/
 }
 
 }

@@ -1,6 +1,0 @@
-
-public class Insercion {
-public int[] ordenar(int vec[]) {
-	
-}
-}
